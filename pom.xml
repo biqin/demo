@@ -19,7 +19,17 @@
         <module>common</module>
         <module>json</module>
         <module>jdk8</module>
+        <module>junit</module>
+        <module>jvm</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 
 </project>
