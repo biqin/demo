@@ -21,6 +21,7 @@
         <module>jdk8</module>
         <module>junit</module>
         <module>jvm</module>
+        <module>stream</module>
     </modules>
 
     <dependencies>
