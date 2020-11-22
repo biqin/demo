@@ -31,3 +31,16 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
+.gitignore
+.idea/inspectionProfiles/
+.idea/workspace.xml
+common/.mvn/.mvn.iml
+common/HELP.md
+common/common.iml
+common/src/main/main.iml
+common/src/main/resources/static/
+common/src/main/resources/templates/
+common/src/test/test.iml
+common/target/
+json/src/main/resources/
+json/src/test/

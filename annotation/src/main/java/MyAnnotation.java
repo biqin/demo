@@ -7,4 +7,5 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.RUNTIME)
 @interface MyAnnotation {
     String[] value() default "unknown";
+    int qq() default 23;
 }

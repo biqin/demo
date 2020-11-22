@@ -23,7 +23,7 @@
         <module>jvm</module>
         <module>stream</module>
         <module>annotation</module>
-        <module>annotation</module>
+        <module>esplugin</module>
     </modules>
 
     <dependencies>

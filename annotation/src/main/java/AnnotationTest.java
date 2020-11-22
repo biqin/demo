@@ -38,6 +38,8 @@ public class AnnotationTest {
             for (String str:values)
                 System.out.printf(str+", ");
             System.out.println();
+
+            System.out.println(myAnnotation.qq());
         }
 
         // 获取方法上的所有注解，并打印出来

@@ -14,8 +14,8 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws IOException, ParseException {
-//        commonTest();
-//        parserTest();
+    //    commonTest();
+ //       parserTest();
 //        generatorTest();
         rwAnnoTest();
     }
@@ -24,7 +24,7 @@ public class Main {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
         String carJson =
-                "{ \"brand\" : \"Mercedes\", \"doors\" : 5, \"date\": \"2012-12-11\" }";
+                "{ \"brand\" : \"Mercedes\", \"doors\" : 5, \"date\": \"2012-12-11\"}";
 
         String carsJson = "[{\"brand\":\"ford\"}, {\"brand\":\"Fiat\"}]";
 
