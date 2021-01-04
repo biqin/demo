@@ -20,13 +20,17 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
 
-    @Autowired
     private UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @ApiOperation("获取用户")
     @RequestMapping(value="{id}", method=RequestMethod.GET)
     public User getUser(@PathVariable int id) {
-        return userService.getUser(id);
+        return new User();
+        //return userService.getUser(id);
     }
 
     @ApiOperation("添加用户")
