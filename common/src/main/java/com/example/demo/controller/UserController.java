@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.async.DeferredResult;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,22 @@ public class UserController {
     public User getUser(@PathVariable int id) {
         return new User();
         //return userService.getUser(id);
+    }
+
+    @ApiOperation("获取用户")
+    @RequestMapping(value="{id}/async", method=RequestMethod.GET)
+    public DeferredResult<User> getUserAsync(@PathVariable int id) {
+        DeferredResult<User> deferredResult = new DeferredResult<>();
+        new Thread(()->{
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("haha");
+            deferredResult.setResult(userService.getUser(id));
+        }).start();
+        return deferredResult;
     }
 
     @ApiOperation("添加用户")
