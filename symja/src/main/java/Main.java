@@ -47,7 +47,7 @@ public class Main {
 //        mathUtil.toJava("<math mathvariant='italic' display='inline'>    <mfrac>        <mn>1</mn>        <mn>2</mn>    </mfrac>    <mo>&le;</mo>    <mi>x</mi>    <mo>&le;</mo>    <mfrac>        <mn>5</mn>        <mn>2</mn>    </mfrac></math>",
 //                stw, true);
 //        System.out.println(stw.toString());
-        mathUtil.toMathML("a+b", stw);
+        mathUtil.toMathML("a*b", stw);
         System.out.println(stw.toString());
     }
 }
