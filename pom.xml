@@ -24,6 +24,7 @@
         <module>stream</module>
         <module>annotation</module>
         <module>esplugin</module>
+        <module>symja</module>
     </modules>
 
     <dependencies>
