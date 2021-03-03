@@ -25,6 +25,7 @@
         <module>annotation</module>
         <module>esplugin</module>
         <module>symja</module>
+        <module>office</module>
     </modules>
 
     <dependencies>
