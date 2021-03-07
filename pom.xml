@@ -27,6 +27,8 @@
         <module>eurekaserver</module>
         <module>eurekaclient</module>
         <module>eurekaregister</module>
+        <module>symja</module>
+        <module>office</module>
     </modules>
 
     <dependencies>
