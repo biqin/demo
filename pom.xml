@@ -24,6 +24,9 @@
         <module>stream</module>
         <module>annotation</module>
         <module>esplugin</module>
+        <module>eurekaserver</module>
+        <module>eurekaclient</module>
+        <module>eurekaregister</module>
     </modules>
 
     <dependencies>

@@ -47,4 +47,7 @@ myconfig:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1111/eureka/
+      defaultZone: http://single:1111/eureka/
+
+
+

@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.eurekaserver.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -19,12 +19,19 @@ public class EurekaController {
 
     @ApiOperation("获取EurekaClient")
     @RequestMapping(value = "clients", method= RequestMethod.GET)
-    public List<String> getEurekaClient() {
+    public List<String> getEurekaClients() {
         System.out.println("++++++++++++++++++++++");
         //List<String> services = client.getServices();
         List<String> services = new ArrayList<>();
         services.add("11");
         services.add("22");
         return services;
+    }
+
+
+    @ApiOperation("获取EurekaClient")
+    @RequestMapping(value = "client", method= RequestMethod.GET)
+    public String getEurekaClient() {
+        return "haha";
     }
 }
