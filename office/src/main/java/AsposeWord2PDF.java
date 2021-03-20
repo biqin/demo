@@ -1,7 +1,7 @@
-import com.aspose.words.Document;
-import com.aspose.words.License;
-import com.aspose.words.SaveFormat;
+import com.aspose.words.*;
+import com.aspose.words.Font;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -22,7 +22,37 @@ public class AsposeWord2PDF implements Word2PDF{
             File file = new File(outPath);
             FileOutputStream os = new FileOutputStream(file);
             Document doc = new Document(inPath);
-            doc.save(os, SaveFormat.PDF);// 全面支持DOC, DOCX, OOXML, RTF HTML, OpenDocument, PDF,EPUB, XPS, SWF 相互转换
+            //DocumentBuilder builder = new DocumentBuilder(doc);
+            PageSetup pageSetup = doc.getSections().get(0).getPageSetup();
+            double dcc = doc.getFirstSection().getBody().getFirstParagraph().getParagraphFormat().getLineSpacing();
+//            pageSetup.setBorderAlwaysInFront(false);
+            //pageSetup.setBorderDistanceFrom(PageBorderDistanceFrom.PAGE_EDGE);
+//            pageSetup.setBorderAppliesTo(PageBorderAppliesTo.FIRST_PAGE);
+
+
+            double oldHMarginSum = pageSetup.getLeftMargin() + pageSetup.getRightMargin();
+            double oldVMarginSum = pageSetup.getTopMargin() + pageSetup.getBottomMargin();
+
+
+            double newVMargin = 50;
+            double newVMarginSum = 2 * newVMargin;
+            pageSetup.setLeftMargin(0);
+            pageSetup.setRightMargin(0);
+            pageSetup.setTopMargin(newVMargin);
+            pageSetup.setBottomMargin(newVMargin);
+
+            pageSetup.setPageWidth(pageSetup.getPageWidth() - oldHMarginSum);
+            pageSetup.setPageHeight(pageSetup.getPageHeight() - oldVMarginSum + newVMarginSum);
+
+//            pageSetup.setPageWidth();
+//            pageSetup.setPageHeight();
+
+//            Border border = pageSetup.getBorders().getByBorderType(BorderType.TOP);
+//            border.setLineStyle(LineStyle.SINGLE);
+//            border.setLineWidth(30.0);
+//            border.setColor(Color.BLUE);
+//            border.setDistanceFromText(0.0);
+            doc.save(os, SaveFormat.DOCX);// 全面支持DOC, DOCX, OOXML, RTF HTML, OpenDocument, PDF,EPUB, XPS, SWF 相互转换
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -43,3 +73,4 @@ public class AsposeWord2PDF implements Word2PDF{
         return result;
     }
 }
+

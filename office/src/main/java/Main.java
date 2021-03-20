@@ -10,8 +10,10 @@ import java.io.FileOutputStream;
  */
 public class Main {
     public static void main(String[] args) {
-        //Word2PDF word2PDF = new AsposeWord2PDF();
-        Word2PDF word2PDF = new POIWord2PDF();
-        word2PDF.convert("D:/input.doc", "D:/out.pdf");
+        Word2PDF word2PDF = new AsposeWord2PDF();
+        //Word2PDF word2PDF = new POIWord2PDF();
+        word2PDF.convert("D:/1.doc", "D:/2.doc");
+
+
     }
 }
