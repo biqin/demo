@@ -12,7 +12,7 @@
     <artifactId>esplugin</artifactId>
 
     <properties>
-    <es.version>6.2.2</es.version>
+    <es.version>6.8.17</es.version>
     </properties>
 
     <dependencies>
