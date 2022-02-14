@@ -25,7 +25,7 @@ public class ObservableCommandHelloWorld extends HystrixObservableCommand<String
                     observer.onNext("Hello1" + " thread: " + Thread.currentThread().getName());
                     observer.onNext("Hello2" + " thread: " + Thread.currentThread().getName());
                     observer.onNext(name + " thread:" + Thread.currentThread().getName());
-                    System.out.println("complete before-----" + "thread: " + Thread.currentThread().getName());
+                    System.out.println("complete before-----" + "thread: " + Thread.currentThread().getName() + "\r\n");
                     observer.onCompleted();
                     System.out.println("complete after------" + "thread: " + Thread.currentThread().getName() + "\r\n"
                     );
