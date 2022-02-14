@@ -49,12 +49,10 @@ public class HoldCPUMain {
         System.out.println("eft");
 
 
-        /*
         new Thread(new HoldCPUTask()).start();
         new Thread(new LazyTask()).start();
         new Thread(new LazyTask()).start();
         new Thread(new LazyTask()).start();
 
-         */
     }
 }

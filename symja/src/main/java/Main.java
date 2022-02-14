@@ -1,4 +1,5 @@
 import com.sun.javafx.fxml.expression.ExpressionValue;
+
 import org.matheclipse.core.convert.AST2Expr;
 import org.matheclipse.core.eval.EvalEngine;
 import org.matheclipse.core.eval.EvalUtilities;
@@ -15,9 +16,17 @@ import org.matheclipse.parser.client.ast.ASTNode;
 import org.matheclipse.parser.client.eval.DoubleEvaluator;
 import org.matheclipse.parser.client.eval.DoubleVariable;
 import org.matheclipse.parser.client.eval.IDoubleValue;
+import org.redisson.Redisson;
+import org.redisson.api.RPriorityBlockingQueue;
+import org.redisson.api.RPriorityQueue;
+import org.redisson.api.RScoredSortedSet;
+import org.redisson.api.RedissonClient;
 
 import javax.script.ScriptEngine;
 import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.PriorityBlockingQueue;
 
 /**
  * @author: bq
@@ -40,6 +49,12 @@ public class Main {
 //        System.out.println(ast1.toString());
 //        System.out.println(ast2.toString());
 
+//        RedissonClient redisson = Redisson.create();
+//        RScoredSortedSet zset = redisson.getScoredSortedSet("dd");
+//        RPriorityQueue queue1 = redisson.getPriorityQueue("anyQueue");
+//        PriorityBlockingQueue queue2 = new PriorityBlockingQueue();
+
+
         EvalEngine engine = new EvalEngine();
         MathMLContentUtilities mathUtil = new MathMLContentUtilities(engine);
 
@@ -49,5 +64,24 @@ public class Main {
 //        System.out.println(stw.toString());
         mathUtil.toMathML("a*b", stw);
         System.out.println(stw.toString());
+
+        float a = -23.2222f;
+        System.out.printf("Fees: %10.2f-\n", -a);
     }
+
+    private void showAmount(String topic, float amount) {
+        String format = (amount < 0) ? "%s: %10.2f-\n" : "%s: %10.2f\n";
+        showAmountWithFormat(topic, amount, format);
+    }
+
+    private void showAmountWithFormat(String topic, float amount, String format) {
+        String topicAmount = String.format(format, topic, amount);
+        System.out.println(topicAmount);
+    }
+
+    private void printLineSeparator() {
+        System.out.println("----\n");
+    }
+
+
 }

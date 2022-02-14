@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+import java.util.Timer;
+
 
 //@EnableDiscoveryClient
 @SpringBootApplication
@@ -16,6 +18,7 @@ public class DemoApplication {
 //        System.out.println(format);
         SpringApplication.run(DemoApplication.class, args);
         System.out.println("haha");
+        Timer dd = new Timer();
     }
 
 }
